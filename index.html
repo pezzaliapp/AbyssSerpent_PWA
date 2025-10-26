@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover">
+  <title>Abyss Serpent — PezzaliAPP Edition</title>
+  <meta name="theme-color" content="#071225">
+  <meta name="description" content="Un serpente di luce che danza nel mare come in sogno. PWA offline by pezzaliAPP.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <img class="logo" src="icons/icon-192.png" alt="logo">
+      <h1>Abyss Serpent</h1>
+      <span class="edition">— PezzaliAPP Edition</span>
+    </div>
+    <nav class="actions">
+      <button id="btnPlay" title="Play/Pausa" aria-label="Play/Pausa">▶︎</button>
+      <button id="btnSettings" title="Impostazioni" aria-label="Impostazioni">⚙︎</button>
+      <button id="btnFullscreen" title="Schermo intero" aria-label="Schermo intero">⛶</button>
+      <button id="btnInstall" title="Installa PWA" aria-label="Installa PWA">＋</button>
+    </nav>
+  </header>
+
+  <main>
+    <canvas id="scene" aria-label="Mare dinamico con serpente di luce"></canvas>
+    <section id="hud">
+      <div class="chip"><b>FPS</b> <span id="fps">60</span></div>
+      <div class="chip"><b>PART</b> <span id="part">0</span></div>
+      <div class="chip"><b>THEME</b> <span id="themeName">Abyss</span></div>
+    </section>
+    <section id="help">
+      Tocca e trascina per guidare il serpente. Doppio tap per cambiare tema. Pinch per zoom.
+    </section>
+  </main>
+
+  <dialog id="settings">
+    <form method="dialog">
+      <h2>Impostazioni</h2>
+      <label>Luminosità coda <input id="glow" type="range" min="0" max="1.5" step="0.05" value="0.9"></label>
+      <label>Velocità <input id="speed" type="range" min="0.1" max="2.0" step="0.05" value="1.0"></label>
+      <label>Lunghezza scia <input id="trail" type="range" min="40" max="400" step="10" value="180"></label>
+      <label>Spessore <input id="thickness" type="range" min="1" max="12" step="1" value="6"></label>
+      <label>Qualità acqua <input id="waterQuality" type="range" min="0.4" max="1.0" step="0.05" value="0.8"></label>
+      <div class="row">
+        <button id="btnTheme">Cambia tema</button>
+        <button value="cancel">Chiudi</button>
+      </div>
+      <p class="note">PWA offline-ready. Funziona anche senza rete.</p>
+    </form>
+  </dialog>
+
+  <footer>
+    <small>© 2025 pezzaliAPP — MIT License. <a href="./readme.html">Readme</a></small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
